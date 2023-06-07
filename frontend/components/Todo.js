@@ -1,7 +1,15 @@
-import React from 'react'
+// frontend/components/Todo.js
 
-export default class Todo extends React.Component {
+import React from 'react';
+
+class Todo extends React.Component {
   render() {
-    return null
+    return (
+      <li onClick={() => this.props.handleToggleTodo(this.props.todo.id)}>
+        {this.props.todo.name} {this.props.todo.completed ? '(Completed)' : ''}
+      </li>
+    );
   }
 }
+
+export default Todo;
